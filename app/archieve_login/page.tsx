@@ -1,11 +1,10 @@
 'use client';
 
-import Script from 'next/script';
 import Link from 'next/link';
 
 export default function ArchiveLogin() {
   return (
-    <div className="bg-[#f7f9fb] font-['Inter'] text-[#191c1e] antialiased min-h-screen">
+    <div className="bg-[var(--background)] font-['Inter'] text-[var(--foreground)] antialiased min-h-screen">
       
       {/* Inject Fonts, Icons, and Custom Utilities directly for single-file independence */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -21,24 +20,24 @@ export default function ArchiveLogin() {
 
       <main className="min-h-screen flex flex-col items-center justify-between relative overflow-hidden pt-24">
         {/* Background Half-color */}
-        <div className="absolute top-0 left-0 w-full h-1/2 bg-[#f2f4f6] -z-10"></div>
+        <div className="absolute top-0 left-0 w-full h-1/2 bg-[var(--surface)] -z-10"></div>
         
         <div className="w-full max-w-md mt-16 px-6">
           <div className="text-center mb-12">
-            <h1 className="font-['Inter'] text-[#182034] text-xl font-black uppercase tracking-widest mb-2">Private Archive</h1>
-            <p className="text-[#43474e] text-sm font-medium tracking-tight">Access restricted to authorized lineage members</p>
+            <h1 className="font-['Inter'] text-[var(--text-main)] text-xl font-black uppercase tracking-widest mb-2">Private Archive</h1>
+            <p className="text-[var(--text-muted)] text-sm font-medium tracking-tight">Access restricted to authorized lineage members</p>
           </div>
           
-          <div className="bg-[#ffffff] shadow-[0_10px_40px_-10px_rgba(24,32,52,0.06)] rounded-xl p-8 md:p-12 relative">
+          <div className="bg-[var(--surface-elevated)] shadow-[0_10px_40px_-10px_rgba(24,32,52,0.06)] rounded-xl p-8 md:p-12 relative">
             <div className="absolute top-0 left-0 w-full h-1 bg-[#3b1600] rounded-t-xl"></div>
             
             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
               <div className="space-y-1">
-                <label className="block text-[0.6875rem] font-['Inter'] font-bold uppercase tracking-wider text-[#43474e]" htmlFor="email">
+                <label className="block text-[0.6875rem] font-['Inter'] font-bold uppercase tracking-wider text-[var(--text-muted)]" htmlFor="email">
                   Email Address
                 </label>
                 <input 
-                  className="w-full bg-[#e0e3e5] border-0 border-b border-[#74777f] px-0 py-3 text-sm focus:ring-0 focus:border-[#182034] transition-all placeholder:text-[#c4c6cf]" 
+                  className="w-full bg-[var(--surface-2)] border-0 border-b border-[var(--border-strong)] px-0 py-3 text-sm focus:ring-0 focus:border-[#182034] transition-all placeholder:text-[#c4c6cf]" 
                   id="email" 
                   name="email" 
                   placeholder="lineage@archive.net" 
@@ -47,11 +46,11 @@ export default function ArchiveLogin() {
               </div>
               
               <div className="space-y-1">
-                <label className="block text-[0.6875rem] font-['Inter'] font-bold uppercase tracking-wider text-[#43474e]" htmlFor="password">
+                <label className="block text-[0.6875rem] font-['Inter'] font-bold uppercase tracking-wider text-[var(--text-muted)]" htmlFor="password">
                   Password
                 </label>
                 <input 
-                  className="w-full bg-[#e0e3e5] border-0 border-b border-[#74777f] px-0 py-3 text-sm focus:ring-0 focus:border-[#182034] transition-all placeholder:text-[#c4c6cf]" 
+                  className="w-full bg-[var(--surface-2)] border-0 border-b border-[var(--border-strong)] px-0 py-3 text-sm focus:ring-0 focus:border-[#182034] transition-all placeholder:text-[#c4c6cf]" 
                   id="password" 
                   name="password" 
                   placeholder="••••••••" 
@@ -70,7 +69,7 @@ export default function ArchiveLogin() {
               </div>
             </form>
             
-            <div className="mt-10 pt-8 border-t border-[#c4c6cf]/10 flex flex-col items-center gap-4">
+            <div className="mt-10 pt-8 border-t border-[var(--border)]/10 flex flex-col items-center gap-4">
               <Link className="text-[0.6875rem] font-['Inter'] font-bold uppercase tracking-widest text-[#f0813a] hover:text-[#3b1600] transition-colors" href="#">
                 Request Access
               </Link>
@@ -85,34 +84,13 @@ export default function ArchiveLogin() {
           <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-6 px-4">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-[#ffb68e] animate-pulse"></div>
-              <span className="text-[0.6875rem] font-['Inter'] uppercase tracking-widest text-[#43474e]">Server Status: Online</span>
+              <span className="text-[0.6875rem] font-['Inter'] uppercase tracking-widest text-[var(--text-muted)]">Server Status: Online</span>
             </div>
           </div>
         </div>
 
       </main>
 
-      {/* Google Translate Integration */}
-      <div id="google_translate_element" style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1000 }}></div>
-      <Script
-        id="google-translate-script"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            function googleTranslateElementInit() {
-              new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,bn,de,ur,ar,hi,fa',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-              }, 'google_translate_element');
-            }
-          `,
-        }}
-      />
-      <Script
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-        strategy="afterInteractive"
-      />
     </div>
   );
 }

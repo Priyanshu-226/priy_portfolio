@@ -1,5 +1,6 @@
 'use client';
 
+import Script from 'next/script';
 import Link from 'next/link';
 
 export default function Projects() {
@@ -190,7 +191,7 @@ export default function Projects() {
                 <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-[var(--text-muted)] mb-8 border-b border-[var(--border)]/30 pb-2">Data & Systems Architecture</h4>
                 <div className="flex flex-wrap gap-3">
                   {['Python', 'SQL', 'Tableau', 'JSON', 'MATLAB', 'AutoCAD', 'Microsoft Project', 'RecDesk', 'Gradescope'].map(tech => (
-                    <span key={tech} className="px-5 py-2.5 bg-blue-50 dark:bg-blue-950/40 text-[var(--text-main)] text-xs font-bold uppercase tracking-wider rounded-full shadow-sm border border-blue-200/50 dark:border-blue-800/40 hover:bg-[#182034] hover:text-[#ffffff] transition-all cursor-default">
+                    <span key={tech} className="px-5 py-2.5 bg-[var(--surface-elevated)] text-[var(--text-main)] text-xs font-bold uppercase tracking-wider rounded-full shadow-sm hover:bg-[#182034] hover:text-[#ffffff] transition-all cursor-default">
                       {tech}
                     </span>
                   ))}
@@ -202,7 +203,7 @@ export default function Projects() {
                 <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-[var(--text-muted)] mb-8 border-b border-[var(--border)]/30 pb-2">AI & Generative Workflows</h4>
                 <div className="flex flex-wrap gap-3">
                   {['Anthropic', 'Gamma', 'Eleven Labs', 'QuillBot', 'Grok', 'Gemini AI'].map(tech => (
-                    <span key={tech} className="px-5 py-2.5 bg-amber-50 dark:bg-amber-950/40 text-[#331200] dark:text-amber-200 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm border border-amber-200/50 dark:border-amber-800/40 hover:bg-[#ffb68e] transition-all cursor-default">
+                    <span key={tech} className="px-5 py-2.5 bg-[#ffdbca] text-[#331200] text-xs font-bold uppercase tracking-wider rounded-full shadow-sm hover:bg-[#ffb68e] transition-all cursor-default">
                       {tech}
                     </span>
                   ))}
@@ -230,6 +231,27 @@ export default function Projects() {
       </main>
 
 
+      {/* Google Translate Integration */}
+      <div id="google_translate_element" style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1000 }}></div>
+      <Script
+        id="google-translate-script"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,bn,de,ur,ar,hi,fa',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+              }, 'google_translate_element');
+            }
+          `,
+        }}
+      />
+      <Script
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        strategy="afterInteractive"
+      />
     </div>
   );
 }

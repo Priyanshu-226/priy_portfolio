@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import ThemeToggle from "./themetoggle";
+import LanguageSelector from "./language-selector";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,22 +30,27 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
         <div>
-        <header className="fixed top-0 z-50 w-full bg-[#f7f9fb]/80 backdrop-blur-md shadow-[0_10px_40px_rgba(24,32,52,0.06)]">
+        <header className="fixed top-0 z-50 w-full bg-[color:var(--surface-elevated)]/90 backdrop-blur-md shadow-[0_10px_40px_rgba(24,32,52,0.10)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
         <nav className="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto font-medium tracking-tight">
-          <div className="text-xl font-bold tracking-tighter text-[#182034]">Areeb Uzzaman</div>
+          <div className="text-xl font-bold tracking-tighter text-[var(--text-main)]">Areeb Uzzaman</div>
           <div className="hidden md:flex gap-8 items-center">
-            <Link className="text-[#182034] border-b-2 border-[#182034] pb-1 transition-all duration-300" href="/">Home</Link>
-            <Link className="text-[#74777f] hover:text-[#182034] transition-colors" href="/policy_research">Projects</Link>
-            <Link className="text-[#74777f] hover:text-[#182034] transition-colors" href="/insights">Insights</Link>
-            <Link className="text-[#74777f] hover:text-[#182034] transition-colors" href="/experience">Experience</Link>
-            <Link className="ml-4 px-6 py-2 bg-[#182034] text-[#ffffff] rounded-lg text-sm font-bold hover:opacity-80 transition-all active:scale-95 duration-200" href="/archieve_login">Archive Login</Link>
+            <Link className="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="/">Home</Link>
+            <Link className="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="/aboutme">About</Link>
+            <Link className="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="/policy_research">Projects</Link>
+            <Link className="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="/insights">Insights</Link>
+            <Link className="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="/experience">Experience</Link>
+            <LanguageSelector />
+            <Link className="ml-4 px-6 py-2 bg-[var(--brand)] text-[var(--brand-contrast)] rounded-lg text-sm font-bold hover:opacity-80 transition-all active:scale-95 duration-200" href="/archieve_login">Archive Login</Link>
+            <ThemeToggle />
           </div>
-          {/* Mobile Menu Icon */}
-          <div className="md:hidden">
-            <span className="material-symbols-outlined text-[#182034]">menu</span>
+          {/* Mobile Controls */}
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
+            <span className="material-symbols-outlined text-[var(--text-main)]">menu</span>
           </div>
         </nav>
       </header>
@@ -50,18 +58,50 @@ export default function RootLayout({
         </div>
         {children}
           {/* Footer */}
-      <footer className="bg-[#f2f4f6] w-full ">
-        <div className="flex flex-col md:flex-row justify-between items-center px-24 py-12 w-full max-w-7xl mx-auto text-sm leading-relaxed text-[#182034]">
+      <footer className="bg-[var(--surface)] w-full ">
+        <div className="flex flex-col md:flex-row justify-between items-center px-24 py-12 w-full max-w-7xl mx-auto text-sm leading-relaxed text-[var(--text-main)]">
           <div className="mb-6 md:mb-0">
             © 2024 Areeb Uzzaman. All rights reserved.
           </div>
           <div className="flex gap-8">
-            <Link className="text-[#74777f] hover:text-[#182034] underline transition-all ease-in-out duration-300" href="#">LinkedIn</Link>
-            <Link className="text-[#74777f] hover:text-[#182034] underline transition-all ease-in-out duration-300" href="#">GitHub</Link>
-            <Link className="text-[#74777f] hover:text-[#182034] underline transition-all ease-in-out duration-300" href="#">Email</Link>
+            <Link className="text-[var(--text-muted)] hover:text-[var(--text-main)] underline transition-all ease-in-out duration-300" href="#">LinkedIn</Link>
+            <Link className="text-[var(--text-muted)] hover:text-[var(--text-main)] underline transition-all ease-in-out duration-300" href="#">GitHub</Link>
+            <Link className="text-[var(--text-muted)] hover:text-[var(--text-main)] underline transition-all ease-in-out duration-300" href="#">Email</Link>
           </div>
         </div>
       </footer>
+      {/* Google Translate Script */}
+      <div id="google_translate_element" style={{ display: "none" }}></div>
+      <Script
+        id="google-translate-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            function googleTranslateElementInit() {
+              if (window.google && window.google.translate) {
+                try {
+                  new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,bn,de,ur,ar,hi,fa,nl,fr,or',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                    autoDisplay: false
+                  }, 'google_translate_element');
+                } catch (e) {
+                  console.log('Google Translate initialization in progress...');
+                }
+              }
+            }
+            // Ensure the function is available globally
+            if (typeof window !== 'undefined') {
+              window.googleTranslateElementInit = googleTranslateElementInit;
+            }
+          `,
+        }}
+      />
+      <Script
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        strategy="afterInteractive"
+      />
         </body>
     </html>
   );

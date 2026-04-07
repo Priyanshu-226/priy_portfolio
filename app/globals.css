@@ -3,6 +3,29 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --surface: #f2f4f6;
+  --surface-elevated: #f7f9fb;
+  --surface-2: #e6e8ea;
+  --text-main: #182034;
+  --text-muted: #74777f;
+  --brand: #182034;
+  --brand-contrast: #ffffff;
+  --border: #d7dce4;
+  --border-strong: #8a93a0;
+}
+
+:root.dark {
+  --background: #0e1117;
+  --foreground: #e6edf7;
+  --surface: #151a24;
+  --surface-elevated: #1a2130;
+  --surface-2: #242e40;
+  --text-main: #e6edf7;
+  --text-muted: #a8b2c3;
+  --brand: #c3d0ea;
+  --brand-contrast: #0e1117;
+  --border: #2e3a4d;
+  --border-strong: #5d6b84;
 }
 
 @theme inline {
@@ -12,15 +35,9 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
+  transition: background-color 200ms ease, color 200ms ease;
 }
