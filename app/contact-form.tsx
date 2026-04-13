@@ -72,14 +72,14 @@ export default function ContactForm({ variant = "full" }: ContactFormProps) {
         <button
           type="submit"
           disabled={status === "loading"}
-          className="w-full bg-[var(--brand)] text-[var(--brand-contrast)] px-6 py-3 font-bold rounded-md hover:opacity-90 transition-all active:scale-95 disabled:opacity-50"
+          className="w-full btn-primary px-6 py-3 disabled:opacity-50"
         >
           {status === "loading" ? "Sending..." : "Send Message"}
         </button>
         {statusMessage && (
           <div
             className={`text-sm font-medium text-center ${
-              status === "success" ? "text-green-600" : "text-red-600"
+              status === "success" ? "text-emerald-500" : "text-rose-500"
             }`}
           >
             {statusMessage}
@@ -123,14 +123,14 @@ export default function ContactForm({ variant = "full" }: ContactFormProps) {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full bg-[var(--brand)] text-[var(--brand-contrast)] px-8 py-4 font-bold rounded-md hover:opacity-90 transition-all active:scale-95 disabled:opacity-50"
+        className="w-full btn-primary px-8 py-4 disabled:opacity-50"
       >
         {status === "loading" ? "Sending..." : "Send Message"}
       </button>
       {statusMessage && (
         <div
           className={`text-sm font-medium text-center ${
-            status === "success" ? "text-green-600" : "text-red-600"
+            status === "success" ? "text-emerald-500" : "text-rose-500"
           }`}
         >
           {statusMessage}

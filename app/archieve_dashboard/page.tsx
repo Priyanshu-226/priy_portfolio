@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ArchiveDashboard() {
   return (
-    <div className="bg-[var(--background)] text-[var(--foreground)] antialiased flex min-h-screen">
+    <div className="page-shell bg-[var(--background)] text-[var(--foreground)] antialiased flex min-h-screen">
       
       {/* Inject Fonts and Icons directly for single-file independence */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -39,9 +40,9 @@ export default function ArchiveDashboard() {
       </aside>
 
       {/* Main Content Area */}
-      <main className="ml-64 flex-1 min-h-screen bg-[var(--background)] flex flex-col">
+      <main className="ms-64 flex-1 min-h-screen bg-[var(--background)] flex flex-col">
         {/* TopAppBar Updated from Shared Component */}
-        <header className="bg-[var(--background)]/80 dark:bg-[#182034]/80 backdrop-blur-md fixed top-0 w-full z-40 border-b border-[#f2f4f6]/10 shadow-sm dark:shadow-none left-0 pl-64">
+        <header className="bg-[var(--background)]/80 dark:bg-[#182034]/80 backdrop-blur-md fixed top-0 w-full z-40 border-b border-[#f2f4f6]/10 shadow-sm dark:shadow-none left-0 ps-64">
           <div className="flex items-center justify-between px-8 py-4 max-w-[1440px] mx-auto">
             <div className="text-xl font-bold tracking-tighter text-[var(--text-main)] dark:text-[#f7f9fb]">Areeb Uzzaman</div>
             <div className="flex items-center gap-8">
@@ -86,10 +87,12 @@ export default function ArchiveDashboard() {
             </div>
             {/* Decorative Image */}
             <div className="col-span-12 md:col-span-5 relative h-64 md:h-full min-h-[300px]">
-              <img 
+              <Image
                 alt="Close-up of a high-end leather-bound historical book with gold leaf lettering resting on a dark walnut library table" 
                 className="absolute inset-0 w-full h-full object-cover rounded-lg shadow-2xl" 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEuotq0gfSI6Ge_estgsxVlWWCN6NzCHvGXHxSWWNYcLaY7_P8_fDL3xiuGl12rJh-EyMLnyPVLeFey4atCZwF9Tziduac6Im8rIzRpiOQWYYzmD9ouLgQ4Fw-lO92kZ-073g9Uz-nA7qhnbtQCZY8pyOHj4B-vW2p4p7eHMhTQwP11lj7Er3MRqsFuml4O2P-1-3MIbPJ_XcJvVMr8PDHp_sxfYgMGGz94xWBZg1h3uwJT-gU5UpNcnycdWVb8rsBmzOHIyvo8yVs" 
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
               />
             </div>
           </section>
@@ -105,7 +108,7 @@ export default function ArchiveDashboard() {
                 <div className="relative group">
                   <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)]">search</span>
                   <input 
-                    className="pl-10 pr-4 py-2 bg-[var(--surface-2)] border-none border-b-2 border-[var(--border-strong)] focus:border-[#182034] focus:ring-0 text-sm w-64 transition-all" 
+                    className="ps-10 pe-4 py-2 bg-[var(--surface-2)] border-none border-b-2 border-[var(--border-strong)] focus:border-[#182034] focus:ring-0 text-sm w-64 transition-all" 
                     placeholder="Search records..." 
                     type="text" 
                   />

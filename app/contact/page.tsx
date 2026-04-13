@@ -5,7 +5,7 @@ import ContactForm from '../contact-form';
 
 export default function Contact() {
   return (
-    <div className="bg-[var(--background)] text-[var(--foreground)] selection:bg-[#ffdbca] selection:text-[#331200] min-h-screen">
+    <div className="page-shell bg-[var(--background)] text-[var(--foreground)] selection:bg-[#ffdbca] selection:text-[#331200] min-h-screen">
       
       <style dangerouslySetInnerHTML={{__html: `
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -30,14 +30,14 @@ export default function Contact() {
         </section>
 
         {/* Contact Form */}
-        <section className="bg-[var(--surface-elevated)] p-12 rounded-2xl shadow-lg border border-[var(--border)] mb-20">
+        <section className="premium-card bg-[var(--surface-elevated)] p-12 rounded-2xl shadow-lg border border-[var(--border)] mb-20">
           <h2 className="text-2xl font-bold text-[var(--text-main)] mb-8">Send a Message</h2>
           <ContactForm variant="full" />
         </section>
 
         {/* Additional Contact Info */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-[var(--surface)] p-8 rounded-xl border-t-4 border-[#f0813a]">
+          <div className="premium-card bg-[var(--surface)] p-8 rounded-xl border-t-4 border-[#f0813a]">
             <span className="material-symbols-outlined text-[#f0813a] text-3xl mb-4 block">mail</span>
             <h3 className="text-lg font-bold text-[var(--text-main)] mb-2">Email</h3>
             <p className="text-[var(--text-muted)] text-sm">
@@ -45,7 +45,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="bg-[var(--surface)] p-8 rounded-xl border-t-4 border-[#f0813a]">
+          <div className="premium-card bg-[var(--surface)] p-8 rounded-xl border-t-4 border-[#f0813a]">
             <span className="material-symbols-outlined text-[#f0813a] text-3xl mb-4 block">schedule</span>
             <h3 className="text-lg font-bold text-[var(--text-main)] mb-2">Availability</h3>
             <p className="text-[var(--text-muted)] text-sm">
@@ -53,7 +53,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="bg-[var(--surface)] p-8 rounded-xl border-t-4 border-[#f0813a]">
+          <div className="premium-card bg-[var(--surface)] p-8 rounded-xl border-t-4 border-[#f0813a]">
             <span className="material-symbols-outlined text-[#f0813a] text-3xl mb-4 block">link</span>
             <h3 className="text-lg font-bold text-[var(--text-main)] mb-2">Social</h3>
             <p className="text-[var(--text-muted)] text-sm">

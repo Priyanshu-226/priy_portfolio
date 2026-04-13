@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Projects() {
   return (
-    <div className="bg-[var(--background)] text-[var(--foreground)] selection:bg-[#d5e3fd] selection:text-[#57657b] min-h-screen overflow-x-hidden">
+    <div className="page-shell bg-[var(--background)] text-[var(--foreground)] selection:bg-[#d5e3fd] selection:text-[#57657b] min-h-screen overflow-x-hidden">
       
       {/* Inject Fonts, Icons, and Custom Utilities directly for single-file independence */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -38,10 +39,10 @@ export default function Projects() {
                 Applied research, institutional benchmarking, and policy frameworks translating complex data into actionable governance strategies.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="px-6 py-3 bg-[#182034] text-[#ffffff] text-sm font-bold tracking-widest uppercase rounded-md hover:opacity-90 transition-all flex items-center gap-2 shadow-lg shadow-[#182034]/10">
+                <button className="btn-primary text-sm tracking-widest uppercase flex items-center gap-2 magnetic">
                   Download CV <span className="material-symbols-outlined text-sm">download</span>
                 </button>
-                <button className="px-6 py-3 bg-[#ffdbca] text-[#331200] text-sm font-bold tracking-widest uppercase rounded-md hover:bg-[#ffb68e] transition-all">
+                <button className="btn-secondary text-sm tracking-widest uppercase">
                   View Publications
                 </button>
               </div>
@@ -93,7 +94,7 @@ export default function Projects() {
               {/* Card 1 */}
               <div className="group flex flex-col bg-[var(--surface-elevated)] overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#182034]/5">
                 <div className="h-64 overflow-hidden relative">
-                  <img alt="Urban Housing Density" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmDJBVBnaLOrdhpq8TTCsjST6uu3RFwBWy9Z7UTxpD9W8FsGA0_p6H10kX4k86vFZ-77VUnyhX_NxHyNGmnggAV9KH4FPbvpVajk3XWztbVwxbB_cXzNWroChsMbB9HjcNth5tNYhQBOUXbmiCH-_3FGxYFnW7PYKbW0xxoyPLwxL2G1DJyti2oHZ5zY0EGPHgxNYE1WWILg_QaJkkFVlQ-VxOzYA_TWA75u65WRZJ4mSLf8zb-q5kNCIqM0Ls0NqAvHG1bdWihDtl" />
+                  <Image alt="Urban Housing Density" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmDJBVBnaLOrdhpq8TTCsjST6uu3RFwBWy9Z7UTxpD9W8FsGA0_p6H10kX4k86vFZ-77VUnyhX_NxHyNGmnggAV9KH4FPbvpVajk3XWztbVwxbB_cXzNWroChsMbB9HjcNth5tNYhQBOUXbmiCH-_3FGxYFnW7PYKbW0xxoyPLwxL2G1DJyti2oHZ5zY0EGPHgxNYE1WWILg_QaJkkFVlQ-VxOzYA_TWA75u65WRZJ4mSLf8zb-q5kNCIqM0Ls0NqAvHG1bdWihDtl" fill sizes="(max-width: 1024px) 100vw, 50vw" />
                   <div className="absolute top-4 left-4 flex gap-2">
                     <span className="px-2 py-1 bg-[#182034] text-[#ffffff] text-[0.6rem] font-bold tracking-widest uppercase rounded-sm">Housing Policy</span>
                     <span className="px-2 py-1 bg-[var(--surface-2)] text-[var(--text-main)] text-[0.6rem] font-bold tracking-widest uppercase rounded-sm">Algorithmic Governance</span>
@@ -113,7 +114,7 @@ export default function Projects() {
               {/* Card 2 */}
               <div className="group flex flex-col bg-[var(--surface-elevated)] overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#182034]/5">
                 <div className="h-64 overflow-hidden relative">
-                  <img alt="Community Safety Meeting" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhBR3AAPqgzFKCy0tHDMRg_kbpIlfUj_HoUuiRsP1lSJZluxeRwsVZG54rlW8n39K7ybE3I-dctHTsbH1TatKUbbz7sbHnQQUZ8RK48AtOWCF2CbVzP0c5ZL3iggVHhmNyu0_QNc63yth5J04eX8UHotkVd0pe_Xzf6o8GCB4ETZGngFrCWDgisx9kShLZD8VZCRFzz6iFOjPmlcXp2qBjFVwTXn2cezccTLRWL9QYc-pUvb43pyF01gD2zfxyw99yg0w76MKWOqZp" />
+                  <Image alt="Community Safety Meeting" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhBR3AAPqgzFKCy0tHDMRg_kbpIlfUj_HoUuiRsP1lSJZluxeRwsVZG54rlW8n39K7ybE3I-dctHTsbH1TatKUbbz7sbHnQQUZ8RK48AtOWCF2CbVzP0c5ZL3iggVHhmNyu0_QNc63yth5J04eX8UHotkVd0pe_Xzf6o8GCB4ETZGngFrCWDgisx9kShLZD8VZCRFzz6iFOjPmlcXp2qBjFVwTXn2cezccTLRWL9QYc-pUvb43pyF01gD2zfxyw99yg0w76MKWOqZp" fill sizes="(max-width: 1024px) 100vw, 50vw" />
                   <div className="absolute top-4 left-4 flex gap-2">
                     <span className="px-2 py-1 bg-[#182034] text-[#ffffff] text-[0.6rem] font-bold tracking-widest uppercase rounded-sm">Public Safety</span>
                     <span className="px-2 py-1 bg-[var(--surface-2)] text-[var(--text-main)] text-[0.6rem] font-bold tracking-widest uppercase rounded-sm">Program Evaluation</span>
@@ -143,7 +144,7 @@ export default function Projects() {
             {/* Presentation Card 1 */}
             <div className="flex-none w-[85vw] md:w-[600px] snap-center">
               <div className="bg-[var(--surface-2)] p-8 md:p-12 rounded-xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#182034]/5 -mr-8 -mt-8 rounded-full transition-transform group-hover:scale-150"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#182034]/5 -me-8 -mt-8 rounded-full transition-transform group-hover:scale-150"></div>
                 <div className="flex flex-wrap gap-2 mb-8">
                   <span className="px-2 py-1 bg-[#f0813a]/10 text-[#f0813a] text-[0.6rem] font-bold tracking-widest uppercase rounded-sm">Public Health</span>
                   <span className="px-2 py-1 bg-[#182034] text-[#ffffff] text-[0.6rem] font-bold tracking-widest uppercase rounded-sm">Information Architecture</span>

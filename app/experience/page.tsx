@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Experience() {
   return (
-    <div className="bg-[var(--background)] text-[var(--foreground)] selection:bg-[#ffdbca] selection:text-[#331200] min-h-screen">
+    <div className="page-shell bg-[var(--background)] text-[var(--foreground)] selection:bg-[#ffdbca] selection:text-[#331200] min-h-screen">
       
       {/* Inject Fonts and Icons directly for single-file independence */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -20,7 +21,7 @@ export default function Experience() {
 
 
 
-      <main className="max-w-7xl mx-auto px-8 py-20">
+      <main className="max-w-7xl mx-auto px-8 py-25">
         {/* Hero Section */}
         <header className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-8">
           <div className="max-w-2xl">
@@ -44,7 +45,7 @@ export default function Experience() {
           
           {/* Item 1 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start group">
-            <div className="md:text-right md:pr-16 order-2 md:order-1">
+            <div className="md:text-right md:pe-16 order-2 md:order-1">
               <div className="inline-block px-3 py-1 bg-[#ffdbca] text-[#331200] text-sm font-bold rounded mb-4">
                 2023 – 2025
               </div>
@@ -68,15 +69,15 @@ export default function Experience() {
               </div>
             </div>
             <div className="order-1 md:order-2">
-              <div className="rounded-xl overflow-hidden bg-[var(--surface)] shadow-sm hover:shadow-md transition-shadow">
-                <img alt="HAEFA Projects" className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt0cVEtQzZMcz-AFwjS-UtTGr3w2OnqfrpgGoqinsqQcNl5tO3Ap1Rg5GouHT_89sBkAr3gdcOgc_Mz2mhk2GTM3eX_4-CYf7ROGnfuSolwROVLJOTO_dmKQM4cNEJ7HtaegbiJd-IMArg5zC4Sd9UqmVHqW-V-xLdFEYB8bHg9TSuaXOkrSmaVG91KklI_FqFnkmpWOEodlHjIN4tlwkziBExmwh2id7cFWmKpzz0vrWf11WEsbgfcyoYChksozjYM9Pzo7K_bW6L" />
+              <div className="rounded-xl overflow-hidden bg-[var(--surface)] shadow-sm hover:shadow-md transition-shadow relative h-80">
+                <Image alt="HAEFA Projects" className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt0cVEtQzZMcz-AFwjS-UtTGr3w2OnqfrpgGoqinsqQcNl5tO3Ap1Rg5GouHT_89sBkAr3gdcOgc_Mz2mhk2GTM3eX_4-CYf7ROGnfuSolwROVLJOTO_dmKQM4cNEJ7HtaegbiJd-IMArg5zC4Sd9UqmVHqW-V-xLdFEYB8bHg9TSuaXOkrSmaVG91KklI_FqFnkmpWOEodlHjIN4tlwkziBExmwh2id7cFWmKpzz0vrWf11WEsbgfcyoYChksozjYM9Pzo7K_bW6L" fill sizes="(max-width: 768px) 100vw, 45vw" />
               </div>
             </div>
           </div>
 
           {/* Item 2 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start group">
-            <div className="md:pl-16 md:border-l md:border-[var(--border)]/30">
+            <div className="md:ps-16 md:border-s md:border-[var(--border)]/30">
               <div className="inline-block px-3 py-1 bg-[#d5e3fd] text-[#57657b] text-sm font-bold rounded mb-4">
                 <span className="text-[var(--text-muted)]">2025</span>
               </div>
@@ -114,7 +115,7 @@ export default function Experience() {
 
           {/* Item 3 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start group">
-            <div className="md:text-right md:pr-16 order-2 md:order-1">
+            <div className="md:text-right md:pe-16 order-2 md:order-1">
               <div className="inline-block px-3 py-1 bg-[#ffb68e] text-[#763300] text-sm font-bold rounded mb-4">
                 2025
               </div>
@@ -138,8 +139,8 @@ export default function Experience() {
               </div>
             </div>
             <div className="order-1 md:order-2">
-              <div className="rounded-xl overflow-hidden bg-[var(--surface)] shadow-sm hover:shadow-md transition-shadow">
-                <img alt="Clinical Research" className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8YH6yfgWfuvuQJEgqPZadzK2i04NSdwJqzkWhXlSPKRSWoXGu8ppv_rc7T221vLNlpOnwNS5ArxVE2Z-ovz0qRMTBZO9LPF0IpCNObpTvOUjSe_kcoIPn-SJSWJsEONn41vwYMzkDIHgJQMnamf2980vG6Tw7nGd1gpNAEcJiT_faJKpkXurFFPGOK-eJvdPMhSAcuIcK8ulweC97vDMe90gkAwK1lWfBE4oz1X9FGBQ1ut6zpgkvklsnA0qEngx_ePaxWzKci3dy" />
+              <div className="rounded-xl overflow-hidden bg-[var(--surface)] shadow-sm hover:shadow-md transition-shadow relative h-80">
+                <Image alt="Clinical Research" className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8YH6yfgWfuvuQJEgqPZadzK2i04NSdwJqzkWhXlSPKRSWoXGu8ppv_rc7T221vLNlpOnwNS5ArxVE2Z-ovz0qRMTBZO9LPF0IpCNObpTvOUjSe_kcoIPn-SJSWJsEONn41vwYMzkDIHgJQMnamf2980vG6Tw7nGd1gpNAEcJiT_faJKpkXurFFPGOK-eJvdPMhSAcuIcK8ulweC97vDMe90gkAwK1lWfBE4oz1X9FGBQ1ut6zpgkvklsnA0qEngx_ePaxWzKci3dy" fill sizes="(max-width: 768px) 100vw, 45vw" />
               </div>
             </div>
           </div>

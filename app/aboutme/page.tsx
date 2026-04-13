@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function About() {
   return (
-    <div className="bg-[var(--background)] text-[var(--foreground)] selection:bg-[#ffdbca] selection:text-[#331200] min-h-screen">
+    <div className="page-shell bg-[var(--background)] text-[var(--foreground)] selection:bg-[#ffdbca] selection:text-[#331200] min-h-screen">
       
       {/* Inject Fonts and Icons directly for single-file independence */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -44,11 +45,13 @@ export default function About() {
             </div>
             
             <div className="md:col-span-5 relative">
-              <div className="aspect-[4/5] bg-[var(--surface-2)] rounded-xl overflow-hidden shadow-2xl">
-                <img 
+              <div className="aspect-[4/5] bg-[var(--surface-2)] rounded-xl overflow-hidden shadow-2xl relative">
+                <Image
                   alt="Areeb Uzzaman speaking at a professional podium" 
                   className="w-full h-full object-cover" 
                   src="https://lh3.googleusercontent.com/aida/ADBb0uiToTjl1Znvh02dGOAIvRBQc74spK7594ZmLfp1eF_RzZU0Z0Q773tQXMI-eM3zdiPB774XWJLDSmVr8bwyTVnWuqQdCBFeb8Id-wJaOjcGrZoypgEwv70gGU1hrOCdE7FnQvJT-h218WX7QNUkUeT2M9SFyBaxNJnmwU6WXB_xIE4zpZRYolPqoR5HvYpiaFARZEy6ZPhrFJiHbJPnO5xkMkyu_FBh6Hg2TvD3jn3M6CHN5IcGVXH6pTtUAwRObRN5uTOb8vKd-18" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, 40vw"
                 />
               </div>
               {/* Tonal Layering Accent */}
@@ -62,16 +65,18 @@ export default function About() {
           <div className="max-w-7xl mx-auto px-8">
             <div className="grid md:grid-cols-12 gap-12 items-end">
               <div className="md:col-span-5 order-2 md:order-1">
-                <div className="aspect-[3/4] bg-[#182034] rounded-xl overflow-hidden shadow-xl border-t-4 border-[#f0813a]">
-                  <img 
+                <div className="aspect-[3/4] bg-[#182034] rounded-xl overflow-hidden shadow-xl border-t-4 border-[#f0813a] relative">
+                  <Image
                     alt="Areeb researching in a grand library" 
                     className="w-full h-full object-cover" 
                     src="https://lh3.googleusercontent.com/aida/ADBb0ujYDmZ9sLXGSpHXiKUuSBGPkZsMPEeylaflpiFEpXJEsg6blHf57pycywCyh11A6SvMWlfC_yuIdBKzScAAlmhfJPCFGKSPA8XyLX4Mg-iUmyEy7r6LRo9Xwy-RD5L12KN25I0Aubrl-V12_8PTeUw3SFDEbl07E94ej5-O0NGFs47C8mOZI0WIIQ9nsF722lMERAOSfXU4DXP2pQh6CBrxWcRgh-vMx__auQzQZDL9j2yAOSzmSzmWwIwGfia8uioGklk9tZMXKpM" 
+                    fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
                   />
                 </div>
               </div>
               <div className="md:col-span-7 order-1 md:order-2 pb-12">
-                <div className="space-y-8 pl-0 md:pl-16">
+                <div className="space-y-8 ps-0 md:ps-16">
                   <h2 className="text-[var(--text-main)] text-4xl md:text-[2.75rem] font-bold tracking-tight">Architecting the Past.</h2>
                   <p className="text-[var(--text-muted)] text-lg leading-[1.6]">
                     What started as a personal inquiry grew into the Independent Archival Research Project. Over three years, I architected a verified lineage database of over 3,100 individuals, navigating the complexities of 500 years of historical data.
@@ -114,10 +119,12 @@ export default function About() {
                 
                 <div className="md:col-span-5">
                   <div className="aspect-square bg-[var(--surface)] rounded-full overflow-hidden border-8 border-white shadow-xl relative group">
-                    <img 
+                    <Image
                       alt="Areeb Uzzaman with a baby goat" 
                       className="w-full h-full object-cover transition-all duration-700" 
                       src="https://lh3.googleusercontent.com/aida/ADBb0uiVEmUctN3xkJzP6rJN19nHaYrB92hf6xhVUUoeD1fQjvifvBeObRMe8FY2590J7iA7--IRV9rRql66aXo2PKMP9gx2zNykC5iD04YCCipyILvFRN-H2pUg3I2axfoKjp1tc9KjWBygAIjK73vfq0uTAi8N5kv1HtiJ9AYrWyM04bLEo6VP1kApNK71EmWSVtmtWvM1rR_mjcxAFA_QYVtt0ik1tNADfPlsVnTCNeuYyQjPqK_sXTG2dSGziNwjVBtQrR6BLrKSPQY" 
+                      fill
+                      sizes="(max-width: 768px) 100vw, 34vw"
                     />
                     <div className="absolute inset-0 bg-[#182034]/10 mix-blend-multiply opacity-0 transition-opacity"></div>
                   </div>

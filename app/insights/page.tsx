@@ -2,10 +2,11 @@
 
 import Link from 'next/link';
 import NewsletterForm from '../newsletter-form';
+import Image from 'next/image';
 
 export default function Insights() {
   return (
-    <div className="bg-[var(--background)] text-[var(--foreground)] min-h-screen">
+    <div className="page-shell bg-[var(--background)] text-[var(--foreground)] min-h-screen">
       
       {/* Inject Fonts and Icons directly for single-file independence */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -64,7 +65,7 @@ export default function Insights() {
                 An examination of how automated valuation models and yield-management software are inadvertently institutionalizing pricing disparities in urban rental markets.
               </p>
               <Link className="inline-flex items-center text-[var(--text-main)] text-sm font-bold group-hover:gap-2 transition-all" href="#">
-                Read Analysis <span className="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                Read Analysis <span className="material-symbols-outlined ms-1 text-sm">arrow_forward</span>
               </Link>
             </article>
 
@@ -79,7 +80,7 @@ export default function Insights() {
                 Proposing a localized, trust-first digital infrastructure to bridge the gap between scientific consensus and community-level healthcare delivery.
               </p>
               <Link className="inline-flex items-center text-[var(--text-main)] text-sm font-bold group-hover:gap-2 transition-all" href="#">
-                Read Analysis <span className="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                Read Analysis <span className="material-symbols-outlined ms-1 text-sm">arrow_forward</span>
               </Link>
             </article>
 
@@ -94,7 +95,7 @@ export default function Insights() {
                 Evaluating the ethical imperatives of maintaining pedagogical oversight in automated grading and personalized learning systems for primary education.
               </p>
               <Link className="inline-flex items-center text-[var(--text-main)] text-sm font-bold group-hover:gap-2 transition-all" href="#">
-                Read Analysis <span className="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                Read Analysis <span className="material-symbols-outlined ms-1 text-sm">arrow_forward</span>
               </Link>
             </article>
           </div>
@@ -103,7 +104,7 @@ export default function Insights() {
         {/* Newsletter / Subscribe Section: Glassmorphism + Tonal Shift */}
         <section className="bg-[var(--surface)] p-12 md:p-20 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-1/2 h-full pointer-events-none opacity-30">
-            <img alt="Areeb Uzzaman" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uihthbNiOtDY3BzVd_vF3L0dmKQ0YpW-Cg3zTtv3ohwrw3S8tAjPEmdSFF_pX2FiNUKtIr5s9zb_Y-N19XVfjnuUq2n6dP_u6rc1RDtavo9YPnPDFjkteii_NJHq5My_UXH_PWK8LXZweFx5ebG6RcfclzqveuLeZHNHpjDCx3HiBNgF-8GZEgBpvea8nBmvCg3_woiQkx1PUo7ZP1MMIcVOZJ40-RAVzJnVSGqpj6GO6w_hxoquyjqDt9pA3iwh4sE4q2yi3JcXgw" />
+            <Image alt="Areeb Uzzaman" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uihthbNiOtDY3BzVd_vF3L0dmKQ0YpW-Cg3zTtv3ohwrw3S8tAjPEmdSFF_pX2FiNUKtIr5s9zb_Y-N19XVfjnuUq2n6dP_u6rc1RDtavo9YPnPDFjkteii_NJHq5My_UXH_PWK8LXZweFx5ebG6RcfclzqveuLeZHNHpjDCx3HiBNgF-8GZEgBpvea8nBmvCg3_woiQkx1PUo7ZP1MMIcVOZJ40-RAVzJnVSGqpj6GO6w_hxoquyjqDt9pA3iwh4sE4q2yi3JcXgw" fill sizes="(max-width: 768px) 0vw, 40vw" />
           </div>
           <div className="relative z-10 max-w-2xl">
             <h3 className="text-[var(--text-main)] text-2xl font-bold mb-4">Direct Policy Dispatches</h3>

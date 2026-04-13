@@ -102,24 +102,25 @@ export default function LanguageSelector() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 hover:opacity-70 transition-opacity rounded-full flex items-center gap-1"
+        className="badge-glass flex items-center gap-2 px-3 py-2 text-xs font-semibold text-[var(--text-main)] hover:shadow-md transition-all"
         aria-label="Select language"
         title="Select language"
       >
-        <span className="material-symbols-outlined text-[var(--text-main)]">language</span>
-        <span className="text-xs font-semibold text-[var(--text-main)] hidden sm:inline">
+        <span className="material-symbols-outlined text-[1rem] text-[var(--text-main)]">language</span>
+        <span className="hidden sm:inline">
           {currentLang.toUpperCase()}
         </span>
+        <span className={`material-symbols-outlined text-sm transition-transform ${isOpen ? "rotate-180" : ""}`}>expand_more</span>
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-[var(--surface-elevated)] border border-[var(--border)] rounded-lg shadow-lg z-50 overflow-hidden">
+        <div className="absolute end-0 mt-2 w-56 bg-[var(--surface-elevated)] border border-[var(--border)] rounded-2xl shadow-xl z-50 overflow-hidden">
           <div className="py-2">
             {(Object.entries(LANGUAGES) as [Language, string][]).map(([code, name]) => (
               <button
                 key={code}
                 onClick={() => handleLanguageChange(code)}
-                className={`w-full text-left px-4 py-2 transition-all ${
+                className={`w-full text-start px-4 py-2.5 transition-all ${
                   currentLang === code
                     ? "bg-[var(--brand)] text-[var(--brand-contrast)]"
                     : "text-[var(--text-main)] hover:bg-[var(--surface)] hover:text-[var(--text-main)]"

@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function ArchiveLogin() {
   return (
-    <div className="bg-[var(--background)] font-['Inter'] text-[var(--foreground)] antialiased min-h-screen">
+    <div className="page-shell bg-[var(--background)] font-['Inter'] text-[var(--foreground)] antialiased min-h-screen">
       
       {/* Inject Fonts, Icons, and Custom Utilities directly for single-file independence */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -60,7 +60,7 @@ export default function ArchiveLogin() {
               
               <div className="pt-4">
                 <button 
-                  className="w-full bg-[#182034] text-[#ffffff] py-4 px-6 rounded-md font-['Inter'] text-sm font-bold tracking-tight hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group" 
+                  className="w-full btn-primary py-4 px-6 font-['Inter'] text-sm tracking-tight active:scale-[0.98] flex items-center justify-center gap-2 group" 
                   type="submit"
                 >
                   Login
