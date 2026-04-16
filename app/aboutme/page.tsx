@@ -16,15 +16,46 @@ export default function About() {
           font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         body { font-family: 'Inter', sans-serif; }
+
+        @keyframes fade-in-up {
+          0% { opacity: 0; transform: translateY(20px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fade-in-left {
+          0% { opacity: 0; transform: translateX(-20px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fade-in-right {
+          0% { opacity: 0; transform: translateX(20px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+
+        .animate-fade-in-up {
+          opacity: 0;
+          animation: fade-in-up 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-in-left {
+          opacity: 0;
+          animation: fade-in-left 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-in-right {
+          opacity: 0;
+          animation: fade-in-right 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
       `}} />
 
      
 
       <main className="pt-24">
         {/* Section 1: Hero - Origin Narrative */}
-        <section className="max-w-7xl mx-auto px-8 py-20 md:py-32">
+        <section className="max-w-7xl mx-auto px-8 py-20 md:py-32 animate-fade-in-up stagger-1">
           <div className="grid md:grid-cols-12 gap-16 items-center">
-            <div className="md:col-span-7 space-y-8">
+            <div className="md:col-span-7 space-y-8 animate-fade-in-left stagger-1">
               <span className="inline-block px-3 py-1 bg-[#ffdbca] text-[#331200] text-[0.6875rem] uppercase tracking-widest font-bold rounded-sm">
                 Origin Narrative
               </span>
@@ -37,15 +68,15 @@ export default function About() {
                 </p>
               </div>
               <div className="pt-4">
-                <button className="flex items-center gap-3 text-[var(--text-main)] font-bold group">
+                <button className="flex items-center gap-3 text-[var(--text-main)] font-bold group transition-all hover:translate-x-1">
                   <span className="text-sm uppercase tracking-widest">Read the Full Narrative</span>
                   <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_right_alt</span>
                 </button>
               </div>
             </div>
             
-            <div className="md:col-span-5 relative">
-              <div className="aspect-[4/5] bg-[var(--surface-2)] rounded-xl overflow-hidden shadow-2xl relative">
+            <div className="md:col-span-5 relative animate-fade-in-right stagger-2">
+              <div className="aspect-[4/5] bg-[var(--surface-2)] rounded-xl overflow-hidden shadow-2xl relative hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
                 <Image
                   alt="Areeb Uzzaman speaking at a professional podium" 
                   className="w-full h-full object-cover" 
@@ -61,11 +92,11 @@ export default function About() {
         </section>
 
         {/* Section 2: The 500-Year Archive Project */}
-        <section className="bg-[var(--surface)] py-32">
+        <section className="bg-[var(--surface)] py-32 animate-fade-in-up stagger-2">
           <div className="max-w-7xl mx-auto px-8">
             <div className="grid md:grid-cols-12 gap-12 items-end">
-              <div className="md:col-span-5 order-2 md:order-1">
-                <div className="aspect-[3/4] bg-[#182034] rounded-xl overflow-hidden shadow-xl border-t-4 border-[#f0813a] relative">
+              <div className="md:col-span-5 order-2 md:order-1 animate-fade-in-left stagger-2">
+                <div className="aspect-[3/4] bg-[#182034] rounded-xl overflow-hidden shadow-xl border-t-4 border-[#f0813a] relative hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
                   <Image
                     alt="Areeb researching in a grand library" 
                     className="w-full h-full object-cover" 
@@ -75,7 +106,7 @@ export default function About() {
                   />
                 </div>
               </div>
-              <div className="md:col-span-7 order-1 md:order-2 pb-12">
+              <div className="md:col-span-7 order-1 md:order-2 pb-12 animate-fade-in-right stagger-2">
                 <div className="space-y-8 ps-0 md:ps-16">
                   <h2 className="text-[var(--text-main)] text-4xl md:text-[2.75rem] font-bold tracking-tight">Architecting the Past.</h2>
                   <p className="text-[var(--text-muted)] text-lg leading-[1.6]">

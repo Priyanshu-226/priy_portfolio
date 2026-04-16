@@ -208,8 +208,8 @@ export default function Portfolio() {
         {/* Hero Section */}
         <section className="relative min-h-[860px] flex items-center px-6 md:px-12 lg:px-24 pt-24 pb-16 overflow-hidden section-reveal">
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute -top-24 -left-16 w-72 h-72 rounded-full bg-[#ffdbca]/40 blur-3xl"></div>
-            <div className="absolute top-20 right-0 w-[32rem] h-[32rem] rounded-full bg-[#d5e3fd]/30 blur-3xl"></div>
+            <div className="absolute -top-24 -left-16 w-72 h-72 rounded-full bg-[#ffdbca]/40 blur-3xl hidden dark:hidden"></div>
+            <div className="absolute top-20 right-0 w-[32rem] h-[32rem] rounded-full bg-[#d5e3fd]/30 blur-3xl hidden dark:hidden"></div>
             <div className="absolute top-0 right-0 h-full w-full lg:w-[42%] bg-gradient-to-b from-[var(--surface)]/70 to-[var(--surface)]/10"></div>
           </div>
 
@@ -304,7 +304,7 @@ export default function Portfolio() {
         {/* Strategic Impact Section */}
         <section className="py-32 px-8 lg:px-24 relative overflow-hidden section-reveal section-delay-2">
           {/* Background animated elements */}
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#ffdbca] opacity-[0.05] rounded-full blur-3xl animate-float pointer-events-none"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#ffdbca] opacity-[0.05] rounded-full blur-3xl animate-float pointer-events-none hidden dark:hidden"></div>
           
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex justify-between items-end mb-16 animate-fade-in-down">
@@ -329,11 +329,11 @@ export default function Portfolio() {
                     <span className="px-3 py-1 bg-[#d5e3fd] text-[#57657b] text-[0.65rem] font-bold rounded uppercase tracking-wider group-hover:bg-[#c4d7fc] group-hover:text-[#3b4d5c] transition-all duration-500">Public Policy</span>
                     <span className="px-3 py-1 bg-[#dae2fd] text-[#131b2e] text-[0.65rem] font-bold rounded uppercase tracking-wider group-hover:bg-[#c8d4fc] transition-all duration-500">Data Science</span>
                   </div>
-                  <h4 className="text-xl font-bold text-[var(--text-main)] mb-3 group-hover:text-[#3b1600] transition-all duration-500 group-hover:translate-x-1">Resilient Migration Data Infrastructure</h4>
+                  <h4 className="text-xl font-bold text-[var(--text-main)] mb-3 group-hover:text-[#f0813a] transition-all duration-500 group-hover:translate-x-1">Resilient Migration Data Infrastructure</h4>
                   <p className="text-[var(--text-muted)] leading-relaxed mb-8 flex-grow group-hover:text-[var(--text-main)] transition-all duration-500">
                     Developing a robust framework for tracking migratory flows using edge-computing nodes to ensure data integrity in low-connectivity humanitarian corridors.
                   </p>
-                  <div className="inline-flex items-center text-sm font-bold text-[#3b1600] group-hover:text-[#f0813a] transition-all duration-500 mt-auto">
+                  <div className="inline-flex items-center text-sm font-bold text-[#f0813a] group-hover:text-[#ffdbca] transition-all duration-500 mt-auto">
                     <span className="relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-current after:origin-bottom-right after:scale-x-0 group-hover:after:origin-bottom-left group-hover:after:scale-x-100 after:transition-transform after:duration-500 after:ease-out">CASE STUDY</span> 
                     <span className="material-symbols-outlined text-sm ms-1 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-500">arrow_outward</span>
                   </div>
@@ -351,11 +351,11 @@ export default function Portfolio() {
                     <span className="px-3 py-1 bg-[#d5e3fd] text-[#57657b] text-[0.65rem] font-bold rounded uppercase tracking-wider group-hover:bg-[#c4d7fc] group-hover:text-[#3b4d5c] transition-all duration-500">NLP</span>
                     <span className="px-3 py-1 bg-[#dae2fd] text-[#131b2e] text-[0.65rem] font-bold rounded uppercase tracking-wider group-hover:bg-[#c8d4fc] transition-all duration-500">Governance</span>
                   </div>
-                  <h4 className="text-xl font-bold text-[var(--text-main)] mb-3 group-hover:text-[#3b1600] transition-all duration-500 group-hover:translate-x-1">Crisis Sentiment Mapping Engine</h4>
+                  <h4 className="text-xl font-bold text-[var(--text-main)] mb-3 group-hover:text-[#f0813a] transition-all duration-500 group-hover:translate-x-1">Crisis Sentiment Mapping Engine</h4>
                   <p className="text-[var(--text-muted)] leading-relaxed mb-8 flex-grow group-hover:text-[var(--text-main)] transition-all duration-500">
                     A human-in-the-loop AI system designed to analyze social media sentiment during natural disasters to guide rapid-response logistics.
                   </p>
-                  <div className="inline-flex items-center text-sm font-bold text-[#3b1600] group-hover:text-[#f0813a] transition-all duration-500 mt-auto">
+                  <div className="inline-flex items-center text-sm font-bold text-[#f0813a] group-hover:text-[#ffdbca] transition-all duration-500 mt-auto">
                     <span className="relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-current after:origin-bottom-right after:scale-x-0 group-hover:after:origin-bottom-left group-hover:after:scale-x-100 after:transition-transform after:duration-500 after:ease-out">CASE STUDY</span> 
                     <span className="material-symbols-outlined text-sm ms-1 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-500">arrow_outward</span>
                   </div>
@@ -368,7 +368,7 @@ export default function Portfolio() {
         {/* Insights & Writing Section */}
         <section className="py-32 bg-[#182034] text-[#ffffff] relative overflow-hidden section-reveal section-delay-3">
           {/* Subtle background glow effect */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-[#ffdbca] opacity-[0.03] blur-[120px] rounded-full pointer-events-none animate-float"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-[#ffdbca] opacity-[0.03] blur-[120px] rounded-full pointer-events-none animate-float hidden dark:hidden"></div>
 
           <div className="max-w-7xl mx-auto px-8 lg:px-24 relative z-10">
             <div className="mb-16 animate-fade-in-down">

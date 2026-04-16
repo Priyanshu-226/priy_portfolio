@@ -19,6 +19,37 @@ export default function Projects() {
           vertical-align: middle;
         }
 
+        @keyframes fade-in-up {
+          0% { opacity: 0; transform: translateY(20px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fade-in-left {
+          0% { opacity: 0; transform: translateX(-20px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fade-in-right {
+          0% { opacity: 0; transform: translateX(20px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+
+        .animate-fade-in-up {
+          opacity: 0;
+          animation: fade-in-up 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-in-left {
+          opacity: 0;
+          animation: fade-in-left 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-in-right {
+          opacity: 0;
+          animation: fade-in-right 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+
         /* Hide scrollbar for the horizontal scroll section */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -28,9 +59,9 @@ export default function Projects() {
 
       <main className="pt-16 overflow-x-hidden">
         {/* Hero Section: Intentional Asymmetry */}
-        <section className="relative min-h-[716px] flex items-center bg-[var(--background)] pt-20 pb-24 md:pb-32 px-8 overflow-hidden">
+        <section className="relative min-h-[716px] flex items-center bg-[var(--background)] pt-20 pb-24 md:pb-32 px-8 overflow-hidden animate-fade-in-up stagger-1">
           <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-            <div className="md:col-span-8 lg:col-span-7">
+            <div className="md:col-span-8 lg:col-span-7 animate-fade-in-left stagger-1">
               <span className="inline-block px-3 py-1 mb-6 text-[0.6875rem] font-bold tracking-[0.1em] uppercase bg-[#d5e3fd] text-[#57657b] rounded-sm">Research Portfolio 2024-2026</span>
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-[var(--text-main)] leading-[1.1] mb-8">
                 Policy Briefs & Academic Research
@@ -39,19 +70,19 @@ export default function Projects() {
                 Applied research, institutional benchmarking, and policy frameworks translating complex data into actionable governance strategies.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="btn-primary text-sm tracking-widest uppercase flex items-center gap-2 magnetic">
+                <button className="btn-primary text-sm tracking-widest uppercase flex items-center gap-2 magnetic transition-all hover:-translate-y-1">
                   Download CV <span className="material-symbols-outlined text-sm">download</span>
                 </button>
-                <button className="btn-secondary text-sm tracking-widest uppercase">
+                <button className="btn-secondary text-sm tracking-widest uppercase transition-all hover:-translate-y-1">
                   View Publications
                 </button>
               </div>
             </div>
 
             {/* Hero Abstract Element */}
-            <div className="hidden md:block md:col-span-4 lg:col-span-5 relative h-full">
+            <div className="hidden md:block md:col-span-4 lg:col-span-5 relative h-full animate-fade-in-right stagger-2">
               <div className="absolute -top-12 -right-12 w-96 h-96 bg-[#182034]/5 rounded-full blur-3xl"></div>
-              <div className="relative z-10 p-8 bg-[var(--surface-elevated)] rounded-xl border-t-4 border-[#3b1600] shadow-xl shadow-[#182034]/5 rotate-2 translate-y-8">
+              <div className="relative z-10 p-8 bg-[var(--surface-elevated)] rounded-xl border-t-4 border-[#3b1600] shadow-xl shadow-[#182034]/5 rotate-2 translate-y-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-full bg-[#182034] flex items-center justify-center text-[#ffffff]">
                     <span className="material-symbols-outlined text-lg">policy</span>
@@ -73,9 +104,9 @@ export default function Projects() {
         </section>
 
         {/* Section 1: Case Studies (Grid Layout) */}
-        <section className="bg-[var(--surface)] py-24 md:py-32 px-8">
+        <section className="bg-[var(--surface)] py-24 md:py-32 px-8 animate-fade-in-up stagger-2">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 animate-fade-in-left stagger-2">
               <div className="max-w-xl">
                 <h2 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-[var(--text-main)] mb-4">Case Studies & Policy Briefs</h2>
                 <p className="text-[var(--text-muted)] font-medium">Investigating the intersection of emerging technology and urban equity through data-driven advocacy.</p>
@@ -92,7 +123,7 @@ export default function Projects() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
               {/* Card 1 */}
-              <div className="group flex flex-col bg-[var(--surface-elevated)] overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#182034]/5">
+              <div className="group flex flex-col bg-[var(--surface-elevated)] overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#182034]/5 animate-fade-in-left stagger-2">
                 <div className="h-64 overflow-hidden relative">
                   <Image alt="Urban Housing Density" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmDJBVBnaLOrdhpq8TTCsjST6uu3RFwBWy9Z7UTxpD9W8FsGA0_p6H10kX4k86vFZ-77VUnyhX_NxHyNGmnggAV9KH4FPbvpVajk3XWztbVwxbB_cXzNWroChsMbB9HjcNth5tNYhQBOUXbmiCH-_3FGxYFnW7PYKbW0xxoyPLwxL2G1DJyti2oHZ5zY0EGPHgxNYE1WWILg_QaJkkFVlQ-VxOzYA_TWA75u65WRZJ4mSLf8zb-q5kNCIqM0Ls0NqAvHG1bdWihDtl" fill sizes="(max-width: 1024px) 100vw, 50vw" />
                   <div className="absolute top-4 left-4 flex gap-2">
@@ -112,7 +143,7 @@ export default function Projects() {
               </div>
 
               {/* Card 2 */}
-              <div className="group flex flex-col bg-[var(--surface-elevated)] overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#182034]/5">
+              <div className="group flex flex-col bg-[var(--surface-elevated)] overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#182034]/5 animate-fade-in-right stagger-3\">
                 <div className="h-64 overflow-hidden relative">
                   <Image alt="Community Safety Meeting" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhBR3AAPqgzFKCy0tHDMRg_kbpIlfUj_HoUuiRsP1lSJZluxeRwsVZG54rlW8n39K7ybE3I-dctHTsbH1TatKUbbz7sbHnQQUZ8RK48AtOWCF2CbVzP0c5ZL3iggVHhmNyu0_QNc63yth5J04eX8UHotkVd0pe_Xzf6o8GCB4ETZGngFrCWDgisx9kShLZD8VZCRFzz6iFOjPmlcXp2qBjFVwTXn2cezccTLRWL9QYc-pUvb43pyF01gD2zfxyw99yg0w76MKWOqZp" fill sizes="(max-width: 1024px) 100vw, 50vw" />
                   <div className="absolute top-4 left-4 flex gap-2">

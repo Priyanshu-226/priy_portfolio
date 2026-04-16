@@ -149,7 +149,7 @@ export default function Experience() {
               </p>
             </div>
             <div className="flex justify-start lg:justify-end">
-              <button className="inline-flex items-center gap-3 bg-[#182034] text-[#ffffff] px-8 py-4 rounded-md font-semibold hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_40px_rgba(24,32,52,0.1)]">
+              <button className="inline-flex items-center gap-3 bg-[#182034] text-[#ffffff] px-8 py-4 mt-40 rounded-md font-semibold hover:opacity-90 transition-all active:scale-95 shadow-[0_10px_40px_rgba(24,32,52,0.1)]">
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>download</span>
                 Download Full Resume (PDF)
               </button>
@@ -210,7 +210,7 @@ export default function Experience() {
               ) : (
                 <>
                   <div className="md:ps-16 md:border-s md:border-[var(--border)]/30 animate-slide-in-left" style={{ animationDelay: `${idx * 0.15}s` }}>
-                    <div className="inline-block px-3 py-1 bg-[#d5e3fd] text-[#57657b] text-sm font-bold rounded mb-4">
+                    <div className="inline-block px-3 py-1 bg-[var(--surface-2)] text-[#57657b] text-sm font-bold rounded mb-4">
                       <span className="text-[var(--text-muted)]">{exp.period}</span>
                     </div>
                     <h3 className="text-2xl font-bold text-[var(--text-main)] mb-2">{exp.title}</h3>
